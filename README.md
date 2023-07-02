@@ -11,15 +11,32 @@ ___
 
 # ✊🤚✌🤏🖖
 
-### Entorno
-Proyecto de ReactJS creado con [Vite](https://vitejs.dev/).
+## Live demo
+
+¿Solo querés jugar? Entrá acá: <https://leatex.github.io/unq-ui-leandro-malsam-trabajo-final/>
+
+___
+
+## Entorno de desarrollo
+
+Proyecto de ReactJS creado con [Vite](https://vitejs.dev/).  
+Se requiere [Git](https://git-scm.com/downloads) y [NodeJS](https://nodejs.org/es/download/).
 
 ### Instalación
+
+Clonar el repositorio:
+```
+git clone https://github.com/LeaTex/unq-ui-leandro-malsam-trabajo-final.git
+```
+
+Adentro del directorio, instalar las dependencias:
 ```
 npm install
 ```
 
-### Ejecución
+Ejecutar el servidor de desarrollo:
 ```
 npm run dev
 ```
+
+El proyecto será accesible desde <http://localhost:5173/unq-ui-leandro-malsam-trabajo-final/>
