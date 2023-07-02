@@ -1,0 +1,12 @@
+.optionButton {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: 100ms;
+}
+
+.optionButton:hover {
+    transform: scale(1.3);
+}
