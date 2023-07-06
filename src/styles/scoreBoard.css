@@ -1,0 +1,10 @@
+.scoresContainer {
+    background-color: #5cdb82;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+}
