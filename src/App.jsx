@@ -1,50 +1,68 @@
 import React, { useState, useEffect } from "react"
 import OptionButton from "./components/optionButton"
 import ScoreBoard from "./components/scoreBoard"
-import { HAND_OPTIONS , pickComputerHand , isWinner } from "./core/core"
+import ShowWinner from "./components/showWinner"
+import { HAND_OPTIONS, GameScore, pickComputerHand , isWinner } from "./core/core"
 import "./App.css";
 
 const App = () => {
     const [userChoice, setUserChoice] = useState(null)
     const [computerChoice, setComputerChoice] = useState(null)
-    const [winner, setWinner] = useState('')
-    const [score, setScore] = useState({playerOne: 0, playerTwo: 0, ties: 0})
+    const [winner, setWinner] = useState(null)
+    const [score, setScore] = useState(GameScore(0,0,0))
 
     const handleUserChoice = (event) => {
         setUserChoice( HAND_OPTIONS.find(option => option.name === event.target.id) )
         setComputerChoice( pickComputerHand() )
     }
 
+    const handleResetGame = () => {
+        setScore(GameScore(0,0,0))
+        setWinner(null)
+        setUserChoice(null)
+        setComputerChoice(null)
+    };
+
     useEffect(() => {
         if (userChoice && computerChoice) {
-            console.log('use effect')
             if (isWinner(userChoice, computerChoice)) {
-                setWinner('usuario')
-                setScore({playerOne: score.playerOne + 1, playerTwo: score.playerTwo, ties: score.ties})
+                setWinner('playerOne')
+                setScore(GameScore(score.playerOne + 1, score.playerTwo, score.ties))
             }
             else if (isWinner(computerChoice, userChoice)) {
-                setWinner('computadora')
-                setScore({playerOne: score.playerOne, playerTwo: score.playerTwo + 1, ties: score.ties})
+                setWinner('playerTwo')
+                setScore(GameScore(score.playerOne, score.playerTwo + 1, score.ties))
             }
             else {
-                setWinner('empate!') 
-                setScore({playerOne: score.playerOne, playerTwo: score.playerTwo, ties: score.ties + 1})
+                setWinner('tie')
+                setScore(GameScore(score.playerOne, score.playerTwo, score.ties + 1))
             }
-            /*setUserChoice(null)
-            setComputerChoice(null)*/
         }
     }, [userChoice, computerChoice])
     
     return (
         <>
             <h1>Piedra - Papel - Tijera - Lagarto - Spock</h1>
-            <ScoreBoard score={score} />
-            <h1>user: {userChoice && userChoice.primaryIcon}</h1>
-            <h1>computer: {computerChoice && computerChoice.secondaryIcon}</h1>
-            {HAND_OPTIONS.map((option) => (
-                <OptionButton key={option.name} option={option} handle={handleUserChoice} />
-            ))}
-            <div>Ganador: {winner}</div>
+            <div className="gameContainer">
+                <div className="handsContainer">
+                    {HAND_OPTIONS.map((option) => (
+                        <OptionButton key={option.name} option={option} handle={handleUserChoice} />
+                    ))}
+                </div>
+                <div className="choicesContainer">
+                    <div>
+                        <div className="avatar">👨🏻</div>
+                        <div className="choice">{userChoice && userChoice.primaryIcon}</div>
+                    </div>
+                    <div>
+                        <div className="avatar">🤖</div>
+                        <div className="choice">{computerChoice && computerChoice.secondaryIcon}</div>
+                    </div>
+                </div>
+                {winner && <ShowWinner winner={winner}/>}
+                <ScoreBoard score={score} />
+                <button className="resetButton" onClick={handleResetGame}><h2>Resetear</h2></button>
+            </div>
         </>
     );
 }

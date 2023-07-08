@@ -1,6 +1,50 @@
 #root {
-    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.choicesContainer {
+    background-color: #9bfcb8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: top;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 15px;
+    width: 60%;
+    height: 255px;
+}
+.choice {
+    font-size: 10rem;
+}
+.avatar {
+    font-size: 2rem;
+}
+
+.handsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.resetButton {
+    background-color: #5cdb82;
+    border-radius: 10px;
+    border-width: 0px;
+    overflow: hidden;
+    align-items: center;
+    height: 4em;
+    cursor: pointer;
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
