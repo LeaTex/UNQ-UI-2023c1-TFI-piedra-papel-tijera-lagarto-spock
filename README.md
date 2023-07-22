@@ -26,7 +26,7 @@ Se requiere [Git](https://git-scm.com/downloads) y [NodeJS](https://nodejs.org/e
 
 Clonar el repositorio:
 ```
-git clone https://github.com/LeaTex/unq-ui-leandro-malsam-trabajo-final.git
+git clone https://github.com/LeaTex/UNQ-UI-2023c1-TFI-piedra-papel-tijera-lagarto-spock.git
 ```
 
 Adentro del directorio, instalar las dependencias:
@@ -39,4 +39,4 @@ Ejecutar el servidor de desarrollo:
 npm run dev
 ```
 
-El proyecto será accesible desde <http://localhost:5173/unq-ui-leandro-malsam-trabajo-final/>
+El proyecto será accesible desde <http://localhost:5173/UNQ-UI-2023c1-TFI-piedra-papel-tijera-lagarto-spock/>
