@@ -13,7 +13,7 @@ ___
 
 ## Live demo
 
-¿Solo querés jugar? Entrá acá: <https://leatex.github.io/unq-ui-leandro-malsam-trabajo-final/>
+¿Solo querés jugar? Entrá acá: <https://leatex.github.io/UNQ-UI-2023c1-TFI-piedra-papel-tijera-lagarto-spock/>
 
 ___
 
